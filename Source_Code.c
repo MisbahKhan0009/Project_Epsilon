@@ -46,10 +46,8 @@ int main() {
   char filename[100], ID[50], password[50], ad_name[50], ad_password[50], a[100], number[100];
    
 
-  printf(YELLOW BOLD
-         "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
-  printf(YELLOW BOLD
-         "\n\t\t|Welcome to NSU Print Zone|\n" BOLD_RESET COLOR_RESET);
+  printf(YELLOW BOLD "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
+  printf(YELLOW BOLD "\n\t\t|Welcome to NSU Print Zone|\n" BOLD_RESET COLOR_RESET);
   printf(YELLOW BOLD "\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
   printf("\nPlease choose a option:");
   printf("\n\n1. I am a student.");
@@ -111,12 +109,9 @@ int main() {
         fread(&usr, sizeof(struct user), 1, fp);
         fclose(fp);
         if (!strcmp(password, usr.password)) {
-          printf(RED BOLD
-                 "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
-          printf(RED BOLD
-                 "\n\t\t|Welcome to your account  |\n" BOLD_RESET COLOR_RESET);
-          printf(RED BOLD
-                 "\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\n\t\t|Welcome to your account  |\n" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
           printf("\n1. See remaining pages");
           printf("\n2. Add pages");
           printf("\n3. print pages");
@@ -133,17 +128,14 @@ int main() {
           }
 
           case 2:
-            printf("Please Enter the amount to be added(Please note 1 that "
-                   "page cost 1tk): ");
+            printf("Please Enter the amount to be added(Please note 1 that page cost 1tk): ");
             scanf("%d", &amount);
             usr.balance = usr.balance + amount;
             fp = fopen(ID, "w");
             fwrite(&usr, sizeof(struct user), 1, fp);
             if (&fwrite != NULL) {
               loading();
-              printf("You have added %d pages in your account, your current "
-                     "printable pages are %d pages\n",
-                     amount, usr.balance);
+              printf("You have added %d pages in your account, your current printable pages are %d pages\n", amount, usr.balance);
             }
             fclose(fp);
             break;
@@ -162,9 +154,7 @@ int main() {
               fwrite(&usr, sizeof(struct user), 1, fp);
               if (&fwrite != 0) {
                 loading();
-                printf("\nYou printed %d pages, and now your remaininhg pages "
-                       "are %d pc\n",
-                       amount, usr.balance);
+                printf("\nYou printed %d pages, and now your remaininhg pages are %d pc\n", amount, usr.balance);
               }
 
               fclose(fp);
@@ -235,12 +225,9 @@ int main() {
         fread(&admin, sizeof(struct Admin), 1, fpa);
         fclose(fpa);
         if (!strcmp(ad_password, admin.password)) {
-          printf(RED BOLD
-                 "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
-          printf(RED BOLD
-                 "\n\t\t|Welcome to your account  |\n" BOLD_RESET COLOR_RESET);
-          printf(RED BOLD
-                 "\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\n\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\n\t\t|Welcome to your account  |\n" BOLD_RESET COLOR_RESET);
+          printf(RED BOLD "\t\t+-------------------------+" BOLD_RESET COLOR_RESET);
           printf("\n1. See student details");
           printf("\n2. Add student manually");
           printf("\n3. Exit");
